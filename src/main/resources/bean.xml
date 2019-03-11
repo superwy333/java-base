@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <!-- 开启springIOC 包扫描功能，在配置的包中，被@Compent @Service @Reposiory @Controller注解的类，会自动被加载的springIOC容器中 -->
+    <!--<context:component-scan base-package="spring_study"></context:component-scan>-->
+
+    <bean id="person" class="spring_study.bean.Person">
+        <property name="age" value="18"></property>
+        <property name="name" value="zhangsan"></property>
+    </bean>
+
+</beans>
