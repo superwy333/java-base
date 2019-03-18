@@ -18,7 +18,7 @@ public class TicketSeller1 {
     static Lock lock = new ReentrantLock();
 
     static { // 初始化车票
-        for (int i=0;i<10000;i++) {
+        for (int i=0;i<1000;i++) {
             list.add("车票编号"+ i);
         }
     }
