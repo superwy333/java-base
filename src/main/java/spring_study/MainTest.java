@@ -5,6 +5,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.env.ConfigurableEnvironment;
+import spring_study.bean.Color;
+import spring_study.bean.ColorFactoryBean;
 import spring_study.bean.Person;
 import spring_study.config.MainConfig;
 import spring_study.config.MainConfig2;
@@ -74,6 +76,21 @@ public class MainTest {
 
         AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext(MainConfig2.class);
         System.out.println("IOC容器创建完成");
+        String[] beanNames = annotationConfigApplicationContext.getBeanDefinitionNames();
+        for (String name:beanNames) {
+            System.out.println(name);
+        }
+        // 这边获取的是Color对象！
+        Color color1 = (Color) annotationConfigApplicationContext.getBean("colorFactoryBean");
+        Color color2 = (Color) annotationConfigApplicationContext.getBean("colorFactoryBean");
+        Color color3 = (Color) annotationConfigApplicationContext.getBean("colorFactoryBean");
+        System.out.println(color1);
+        System.out.println(color2);
+        System.out.println(color3);
+
+        Object bean = annotationConfigApplicationContext.getBean("&colorFactoryBean");
+        System.out.println(bean); // spring_study.bean.ColorFactoryBean@2cd2a21f
+
     }
 
 }
