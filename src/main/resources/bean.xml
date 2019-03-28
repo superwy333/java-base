@@ -8,7 +8,7 @@
     <!-- 开启springIOC 包扫描功能，在配置的包中，被@Compent @Service @Reposiory @Controller注解的类，会自动被加载的springIOC容器中 -->
     <!--<context:component-scan base-package="spring_study"></context:component-scan>-->
 
-    <bean id="person" class="spring_study.bean.Person">
+    <bean id="person" class="spring_study.bean.Person" init-method="" destroy-method="">
         <property name="age" value="18"></property>
         <property name="name" value="zhangsan"></property>
     </bean>
