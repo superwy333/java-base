@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+                            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+                            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+                            http://www.springframework.org/schema/tx  http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+                            http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+    <!-- dubbo基本配置 -->
+    <dubbo:application name="test-dubbo-provider" version="${dubbo.service.version}" logger="slf4j" />
+
+    <dubbo:registry protocol="${registry.protocol}" address="${registry.url}" check="false"></dubbo:registry>
+
+    <dubbo:protocol name="dubbo" host="${dubbo.host}" port="${dubbo.port}" threads="${dubbo.threads}" />
+
+    <dubbo:provider filter="platformContextFilter" proxy="tccJavassist" payload="11557050"/>
+
+    <dubbo:protocol name="rest" port="8005" contextpath="edoc"/>
+
+</beans>
