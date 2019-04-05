@@ -8,7 +8,10 @@
     <!-- 开启springIOC 包扫描功能，在配置的包中，被@Compent @Service @Reposiory @Controller注解的类，会自动被加载的springIOC容器中 -->
     <!--<context:component-scan base-package="spring_study"></context:component-scan>-->
 
-    <bean id="person" class="spring_study.bean.Person" init-method="" destroy-method="">
+    <!--要在xml配置文件中使用配置文件，必须指定配置文件的路基-->
+    <context:property-placeholder location="classpath*:person.properties"/>
+
+    <bean id="person" class="spring_study.bean.Person" init-method="init" destroy-method="destory">
         <property name="age" value="18"></property>
         <property name="name" value="zhangsan"></property>
     </bean>
