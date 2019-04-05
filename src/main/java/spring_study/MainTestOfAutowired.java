@@ -23,7 +23,7 @@ public class MainTestOfAutowired {
         service.printTestDao();
 
         TestDao dao = (TestDao) applicationContext.getBean("testDao");
-        System.out.println(dao);
+        System.out.println("lable in IOC: " + dao.getLable());
 
         applicationContext.close();
     }
