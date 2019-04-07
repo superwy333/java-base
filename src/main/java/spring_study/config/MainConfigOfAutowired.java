@@ -29,11 +29,12 @@ import spring_study.dao.TestDao;
  *                  3.缺失@Autowired(required = false)的功能
  *
  * @Autowired注释的位置：属性、构造器、方法、参数
+ *                  1.方法上
  * Created by wangyang on 2019/4/4.
  */
 
 @Configuration
-@ComponentScan("spring_study") // 使用包扫描的方式向IOC容器中注入bean,扫描的时候如果有configuration，那么扫描进来的configuration也会生效
+@ComponentScan("spring_study.bean") // 使用包扫描的方式向IOC容器中注入bean,扫描的时候如果有configuration，那么扫描进来的configuration也会生效
 public class MainConfigOfAutowired {
 
     @Primary

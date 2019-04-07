@@ -1,5 +1,8 @@
 package spring_study.bean;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Car {
 
 

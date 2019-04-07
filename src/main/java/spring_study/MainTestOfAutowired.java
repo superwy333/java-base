@@ -1,6 +1,8 @@
 package spring_study;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import spring_study.bean.Boss;
+import spring_study.bean.Car;
 import spring_study.config.MainConfigOfAutowired;
 import spring_study.config.MainConfigOfPropertyValue;
 import spring_study.dao.TestDao;
@@ -19,11 +21,17 @@ public class MainTestOfAutowired {
         for (String name:beanNames) {
             System.out.println(name);
         }
-        TestService service = (TestService) applicationContext.getBean("testService");
+        /*TestService service = (TestService) applicationContext.getBean("testService");
         service.printTestDao();
 
         TestDao dao = (TestDao) applicationContext.getBean("testDao");
-        System.out.println("lable in IOC: " + dao.getLable());
+        System.out.println("lable in IOC: " + dao.getLable());*/
+
+        Car car = applicationContext.getBean(Car.class);
+        System.out.println("car in IOC: " + car);
+
+        Boss boss = applicationContext.getBean(Boss.class);
+        System.out.println("car in BOSS: " + boss.getCar());
 
         applicationContext.close();
     }
